@@ -1,17 +1,15 @@
 module.exports = function () {
   var mysql = require("mysql");
-
   const pool = mysql.createPool({
     connectionLimit: process.env.connectionLimit,
     host: "localhost",
     user: "root",
-    password: "aafiya.",
+    password: "",
     database: "finance",
     debug: false,
     multipleStatements: true,
     charset: "utf8mb4",
   });
-
   this.executeWithParams = (requestQuery, params) => {
     var output = {};
     return new Promise(function (resolve) {
@@ -43,7 +41,6 @@ module.exports = function () {
       }
     });
   };
-
   this.executeWithoutParams = (requestQuery) => {
     var output = {};
     return new Promise(function (resolve) {

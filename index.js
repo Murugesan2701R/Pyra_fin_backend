@@ -10,6 +10,7 @@ const IncomeRoutes = require("./routes/IncomeRoutes");
 const ExpenseRoutes = require("./routes/ExpenseRoutes");
 const LoginRoutes = require("./routes/LoginRoutes");
 const AccountSummaryRoutes = require("./routes/AccountSummaryRoutes");
+const TdsRoutes = require("./routes/TdsRoutes");
 const authorizeJWT = require("./routes/authmiddleware");
 
 const app = express();
@@ -39,6 +40,7 @@ app.use("/login", LoginRoutes);
 app.use("/expense", ExpenseRoutes);
 app.use("/income", IncomeRoutes);
 app.use("/account", AccountSummaryRoutes);
+app.use("/tds", TdsRoutes);
 
 const jwtBlacklist = [];
 app.post("/api/logout", (req, res) => {
